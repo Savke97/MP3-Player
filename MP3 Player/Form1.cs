@@ -20,6 +20,8 @@ namespace MP3_Player
         {
             InitializeComponent();
             random = new Random();
+            // Da moze prozor programa kureserom da se smanjuje i povecava
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }  
         
 
@@ -48,6 +50,8 @@ namespace MP3_Player
                     trenutnoDugme.BackColor = boja;
                     trenutnoDugme.ForeColor = Color.White;
                     trenutnoDugme.Font = new System.Drawing.Font("Script MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    titlBar.BackColor = boja;
+                    logoBar.BackColor = ThemeColor.PromeniOsvetljenjeBoje(boja, -0.3);
                 }
             }
         }
@@ -147,5 +151,6 @@ namespace MP3_Player
         {
             Boja(sender, "42, 153, 23");
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,5 +39,28 @@ namespace MP3_Player
             "#7BCFE9",
             "#B71C46"
         };
+        // Funkcija za odredjivanje osvedljenosti rendom boje koje je dotata
+        public static Color PromeniOsvetljenjeBoje(Color color, double osvetljenje)
+        {
+                double red = color.R;
+                double green = color.G;
+                double blue = color.B;
+
+            if(osvetljenje < 0)
+            {
+                osvetljenje = 1 + osvetljenje;
+                red *= osvetljenje;
+                green *= osvetljenje;
+                blue *= osvetljenje;
+            }
+            else
+            {
+                red = (255 - red) * osvetljenje + red;
+                green = (255 - green) * osvetljenje + green;
+                blue = (255 - blue) * osvetljenje + blue;
+            }
+
+            return Color.FromArgb(color.A, (byte)red, (byte)green, (byte)blue);
+        }
     }
 }

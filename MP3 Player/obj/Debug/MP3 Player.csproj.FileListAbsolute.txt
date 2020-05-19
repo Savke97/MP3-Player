@@ -8,3 +8,13 @@ C:\Users\Savke\source\repos\MP3 Player\MP3 Player\obj\Debug\MP3 Player.csproj.Ge
 C:\Users\Savke\source\repos\MP3 Player\MP3 Player\obj\Debug\MP3 Player.csproj.CoreCompileInputs.cache
 C:\Users\Savke\source\repos\MP3 Player\MP3 Player\obj\Debug\MP3 Player.exe
 C:\Users\Savke\source\repos\MP3 Player\MP3 Player\obj\Debug\MP3 Player.pdb
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\bin\Debug\MP3 Player.exe.config
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\bin\Debug\MP3 Player.exe
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\bin\Debug\MP3 Player.pdb
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3_Player.Form1.resources
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3_Player.Properties.Resources.resources
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.csproj.GenerateResource.cache
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.csproj.CoreCompileInputs.cache
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.exe
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.pdb
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.csprojAssemblyReference.cache

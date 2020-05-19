@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.Options = new System.Windows.Forms.Panel();
+            this.kureserKontrolPanel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.logoBar = new System.Windows.Forms.Panel();
+            this.titlBar = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,22 +42,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.pomeranjeProzora1 = new MP3_Player.PomeranjeProzora();
             this.Options.SuspendLayout();
+            this.kureserKontrolPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // Options
             // 
+            this.Options.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Options.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.Options.Controls.Add(this.button8);
-            this.Options.Controls.Add(this.button7);
-            this.Options.Controls.Add(this.button6);
+            this.Options.Controls.Add(this.kureserKontrolPanel);
+            this.Options.Controls.Add(this.logoBar);
+            this.Options.Controls.Add(this.titlBar);
             this.Options.Controls.Add(this.button5);
             this.Options.Controls.Add(this.button4);
             this.Options.Controls.Add(this.label2);
@@ -64,21 +64,35 @@
             this.Options.Controls.Add(this.label1);
             this.Options.Controls.Add(this.button1);
             this.Options.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Options.Location = new System.Drawing.Point(0, -1);
+            this.Options.Location = new System.Drawing.Point(0, 0);
             this.Options.Name = "Options";
-            this.Options.Size = new System.Drawing.Size(203, 552);
+            this.Options.Size = new System.Drawing.Size(952, 552);
             this.Options.TabIndex = 0;
+            // 
+            // kureserKontrolPanel
+            // 
+            this.kureserKontrolPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.kureserKontrolPanel.Controls.Add(this.pomeranjeProzora1);
+            this.kureserKontrolPanel.Controls.Add(this.button8);
+            this.kureserKontrolPanel.Controls.Add(this.button6);
+            this.kureserKontrolPanel.Controls.Add(this.button7);
+            this.kureserKontrolPanel.Location = new System.Drawing.Point(0, 0);
+            this.kureserKontrolPanel.Name = "kureserKontrolPanel";
+            this.kureserKontrolPanel.Size = new System.Drawing.Size(950, 39);
+            this.kureserKontrolPanel.TabIndex = 10;
             // 
             // button8
             // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(98, 13);
+            this.button8.Location = new System.Drawing.Point(796, 0);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(37, 30);
+            this.button8.Size = new System.Drawing.Size(48, 39);
             this.button8.TabIndex = 9;
             this.button8.Text = "X";
             this.button8.UseVisualStyleBackColor = false;
@@ -86,16 +100,35 @@
             this.button8.MouseLeave += new System.EventHandler(this.button8_MouseLeave);
             this.button8.MouseHover += new System.EventHandler(this.button8_MouseHover);
             // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button6.Location = new System.Drawing.Point(904, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(48, 39);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "X";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.MouseLeave += new System.EventHandler(this.button6_Leave);
+            this.button6.MouseHover += new System.EventHandler(this.button6_Hover);
+            // 
             // button7
             // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(55, 13);
+            this.button7.Location = new System.Drawing.Point(850, 0);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(37, 30);
+            this.button7.Size = new System.Drawing.Size(48, 39);
             this.button7.TabIndex = 8;
             this.button7.Text = "X";
             this.button7.UseVisualStyleBackColor = false;
@@ -103,22 +136,23 @@
             this.button7.MouseLeave += new System.EventHandler(this.button7_MouseLeave);
             this.button7.MouseHover += new System.EventHandler(this.button7_MouseHover);
             // 
-            // button6
+            // logoBar
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(12, 13);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 30);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "X";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            this.button6.MouseLeave += new System.EventHandler(this.button6_Leave);
-            this.button6.MouseHover += new System.EventHandler(this.button6_Hover);
+            this.logoBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
+            this.logoBar.Location = new System.Drawing.Point(0, 39);
+            this.logoBar.Name = "logoBar";
+            this.logoBar.Size = new System.Drawing.Size(203, 86);
+            this.logoBar.TabIndex = 2;
+            // 
+            // titlBar
+            // 
+            this.titlBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.titlBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(80)))));
+            this.titlBar.Location = new System.Drawing.Point(199, 39);
+            this.titlBar.Name = "titlBar";
+            this.titlBar.Size = new System.Drawing.Size(753, 86);
+            this.titlBar.TabIndex = 1;
             // 
             // button5
             // 
@@ -217,13 +251,15 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
+            // pomeranjeProzora1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.panel1.Location = new System.Drawing.Point(203, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 141);
-            this.panel1.TabIndex = 1;
+            this.pomeranjeProzora1.IzaberiKontrolu = this.kureserKontrolPanel;
+            this.pomeranjeProzora1.Location = new System.Drawing.Point(800, 12);
+            this.pomeranjeProzora1.Name = "pomeranjeProzora1";
+            this.pomeranjeProzora1.Size = new System.Drawing.Size(10, 11);
+            this.pomeranjeProzora1.TabIndex = 11;
+            this.pomeranjeProzora1.Text = "pomeranjeProzora1";
+            this.pomeranjeProzora1.Visible = false;
             // 
             // Form1
             // 
@@ -231,23 +267,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 551);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Options);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.Options.ResumeLayout(false);
             this.Options.PerformLayout();
+            this.kureserKontrolPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel Options;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel titlBar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
@@ -258,6 +293,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel logoBar;
+        private System.Windows.Forms.Panel kureserKontrolPanel;
+        private PomeranjeProzora pomeranjeProzora1;
     }
 }
 
