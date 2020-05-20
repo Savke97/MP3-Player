@@ -15,6 +15,7 @@ namespace MP3_Player
         private Button trenutnoDugme;
         private Random random;
         private int tempIndex;
+        private Form activeForm;
 
         public Form1()
         {
@@ -75,14 +76,32 @@ namespace MP3_Player
             trenutnoDugme.BackColor = ColorTranslator.FromHtml(n);
         }
 
+        private void OpenChildForm(Form childeForm, object btnSender)
+        {
+            if(activeForm != null)
+            {
+                activeForm.Close();
+            }
+            AktiviranoDugme(btnSender);
+            activeForm = childeForm;
+            childeForm.TopLevel = false;
+            childeForm.FormBorderStyle = FormBorderStyle.None;
+            childeForm.Dock = DockStyle.Fill;
+            this.panelDesktop.Controls.Add(childeForm);
+            this.panelDesktop.Tag = childeForm;
+            childeForm.BringToFront();
+            childeForm.Show();
+            this.labelTiltle.Text = childeForm.Text;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            AktiviranoDugme(sender);
+            OpenChildForm(new Forms.Songs(), sender);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AktiviranoDugme(sender);
+            OpenChildForm(new Forms.PlayLists(), sender);
         }
 
         private void button3_Click(object sender, EventArgs e)

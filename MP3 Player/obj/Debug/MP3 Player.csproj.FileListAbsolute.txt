@@ -18,3 +18,5 @@ D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Pla
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.exe
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.pdb
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.csprojAssemblyReference.cache
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3_Player.Forms.Songs.resources
+D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3_Player.Forms.PlayLists.resources

@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Options = new System.Windows.Forms.Panel();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.kureserKontrolPanel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.logoBar = new System.Windows.Forms.Panel();
             this.titlBar = new System.Windows.Forms.Panel();
+            this.labelTiltle = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +48,7 @@
             this.pomeranjeProzora1 = new MP3_Player.PomeranjeProzora();
             this.Options.SuspendLayout();
             this.kureserKontrolPanel.SuspendLayout();
+            this.titlBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Options
@@ -53,6 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Options.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.Options.Controls.Add(this.panelDesktop);
             this.Options.Controls.Add(this.kureserKontrolPanel);
             this.Options.Controls.Add(this.logoBar);
             this.Options.Controls.Add(this.titlBar);
@@ -68,6 +73,16 @@
             this.Options.Name = "Options";
             this.Options.Size = new System.Drawing.Size(952, 552);
             this.Options.TabIndex = 0;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDesktop.Location = new System.Drawing.Point(202, 125);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(750, 424);
+            this.panelDesktop.TabIndex = 11;
             // 
             // kureserKontrolPanel
             // 
@@ -149,10 +164,23 @@
             this.titlBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titlBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(80)))));
-            this.titlBar.Location = new System.Drawing.Point(199, 39);
+            this.titlBar.Controls.Add(this.labelTiltle);
+            this.titlBar.Location = new System.Drawing.Point(202, 39);
             this.titlBar.Name = "titlBar";
-            this.titlBar.Size = new System.Drawing.Size(753, 86);
+            this.titlBar.Size = new System.Drawing.Size(750, 86);
             this.titlBar.TabIndex = 1;
+            // 
+            // labelTiltle
+            // 
+            this.labelTiltle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTiltle.AutoSize = true;
+            this.labelTiltle.Font = new System.Drawing.Font("Script MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTiltle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelTiltle.Location = new System.Drawing.Point(343, 34);
+            this.labelTiltle.Name = "labelTiltle";
+            this.labelTiltle.Size = new System.Drawing.Size(55, 24);
+            this.labelTiltle.TabIndex = 12;
+            this.labelTiltle.Text = "Main";
             // 
             // button5
             // 
@@ -161,11 +189,15 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Script MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Ivory;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(0, 227);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(203, 42);
             this.button5.TabIndex = 6;
-            this.button5.Text = "Radio";
+            this.button5.Text = "   Radio";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -176,11 +208,15 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Script MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Ivory;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(0, 179);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(203, 42);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Browse";
+            this.button4.Text = "   Browse";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -202,6 +238,8 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Script MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Ivory;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 478);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(203, 42);
@@ -217,6 +255,8 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Script MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Ivory;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 430);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(203, 42);
@@ -243,11 +283,15 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Script MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Ivory;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 382);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(203, 42);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Songs";
+            this.button1.Text = "    Songs";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -276,6 +320,8 @@
             this.Options.ResumeLayout(false);
             this.Options.PerformLayout();
             this.kureserKontrolPanel.ResumeLayout(false);
+            this.titlBar.ResumeLayout(false);
+            this.titlBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,6 +342,8 @@
         private System.Windows.Forms.Panel logoBar;
         private System.Windows.Forms.Panel kureserKontrolPanel;
         private PomeranjeProzora pomeranjeProzora1;
+        private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Label labelTiltle;
     }
 }
 
