@@ -170,6 +170,5 @@ namespace MP3_Player
         {
             Boja(sender, "42, 153, 23");
         }
-
     }
 }

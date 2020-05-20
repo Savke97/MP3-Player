@@ -25,11 +25,11 @@ namespace MP3_Player
             }
         }
         // import funkcije za dodeljvonje kontrole nekoj formi
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr a, int msg, int wParm, int lParm);
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        public static extern int SendMessage(System.IntPtr a, int msg, int wParm, int lParm);
 
         // importovanje metode ReleaseCapture koja oslobadja prozor kad levi klik nije stisnut
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         public static extern bool ReleaseCapture();
         private void DragForm_MousDown(object sender, MouseEventArgs e)
         {
@@ -39,7 +39,7 @@ namespace MP3_Player
             if (flag)
             {
                 PomeranjeProzora.ReleaseCapture();
-                PomeranjeProzora.SendMessage(this.IzaberiKontrolu.FindForm().Handle, 161, 2, 0);
+                PomeranjeProzora.SendMessage(this.IzaberiKontrolu.FindForm().Handle, 0x112, 0xf012, 0);
             }
         }
     }
