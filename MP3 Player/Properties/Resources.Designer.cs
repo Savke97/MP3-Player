@@ -63,9 +63,9 @@ namespace MP3_Player.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlayLists {
+        internal static System.Drawing.Bitmap audio {
             get {
-                object obj = ResourceManager.GetObject("PlayLists", resourceCulture);
+                object obj = ResourceManager.GetObject("audio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,19 +73,9 @@ namespace MP3_Player.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlayLists1 {
+        internal static System.Drawing.Bitmap mute {
             get {
-                object obj = ResourceManager.GetObject("PlayLists1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Songs {
-            get {
-                object obj = ResourceManager.GetObject("Songs", resourceCulture);
+                object obj = ResourceManager.GetObject("mute", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

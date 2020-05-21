@@ -72,7 +72,7 @@
             this.Options.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Options.Location = new System.Drawing.Point(0, 0);
             this.Options.Name = "Options";
-            this.Options.Size = new System.Drawing.Size(952, 552);
+            this.Options.Size = new System.Drawing.Size(1188, 681);
             this.Options.TabIndex = 0;
             // 
             // panelDesktop
@@ -82,7 +82,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.Location = new System.Drawing.Point(202, 125);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(750, 424);
+            this.panelDesktop.Size = new System.Drawing.Size(986, 556);
             this.panelDesktop.TabIndex = 11;
             // 
             // kureserKontrolPanel
@@ -95,7 +95,7 @@
             this.kureserKontrolPanel.Controls.Add(this.button7);
             this.kureserKontrolPanel.Location = new System.Drawing.Point(0, 0);
             this.kureserKontrolPanel.Name = "kureserKontrolPanel";
-            this.kureserKontrolPanel.Size = new System.Drawing.Size(950, 39);
+            this.kureserKontrolPanel.Size = new System.Drawing.Size(1186, 39);
             this.kureserKontrolPanel.TabIndex = 10;
             // 
             // pomeranjeProzora1
@@ -116,7 +116,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(845, 6);
+            this.button8.Location = new System.Drawing.Point(1081, 6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(30, 27);
             this.button8.TabIndex = 9;
@@ -133,7 +133,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(917, 6);
+            this.button6.Location = new System.Drawing.Point(1153, 6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(30, 27);
             this.button6.TabIndex = 7;
@@ -150,7 +150,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(881, 6);
+            this.button7.Location = new System.Drawing.Point(1117, 6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(30, 27);
             this.button7.TabIndex = 8;
@@ -176,7 +176,7 @@
             this.titlBar.Controls.Add(this.labelTiltle);
             this.titlBar.Location = new System.Drawing.Point(202, 39);
             this.titlBar.Name = "titlBar";
-            this.titlBar.Size = new System.Drawing.Size(750, 86);
+            this.titlBar.Size = new System.Drawing.Size(986, 86);
             this.titlBar.TabIndex = 1;
             // 
             // labelOption
@@ -193,7 +193,7 @@
             this.labelTiltle.AutoSize = true;
             this.labelTiltle.Font = new System.Drawing.Font("Script MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTiltle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTiltle.Location = new System.Drawing.Point(334, 23);
+            this.labelTiltle.Location = new System.Drawing.Point(452, 23);
             this.labelTiltle.Name = "labelTiltle";
             this.labelTiltle.Size = new System.Drawing.Size(79, 24);
             this.labelTiltle.TabIndex = 12;
@@ -318,7 +318,7 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 551);
+            this.ClientSize = new System.Drawing.Size(1188, 681);
             this.Controls.Add(this.Options);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
