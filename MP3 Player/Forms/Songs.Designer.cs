@@ -37,18 +37,14 @@
             this.nazadMalo = new Bunifu.Framework.UI.BunifuImageButton();
             this.PlaySong = new Bunifu.Framework.UI.BunifuImageButton();
             this.labelPesma = new System.Windows.Forms.Label();
-            this.labelPevac = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timeToSongsEnd = new System.Windows.Forms.Label();
             this.songVolumen = new Bunifu.Framework.UI.BunifuSlider();
             this.songTime = new Bunifu.Framework.UI.BunifuSlider();
             this.panelSongDisplay = new System.Windows.Forms.Panel();
-            this.panelSongs = new System.Windows.Forms.Panel();
-            this.panelSong = new System.Windows.Forms.Panel();
-            this.playTrenutnuPesmu = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.SongList = new System.Windows.Forms.ListBox();
+            this.panelSongs = new System.Windows.Forms.Panel();
+            this.player2 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panelPlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IzaberiPesme)).BeginInit();
@@ -58,9 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PlaySong)).BeginInit();
             this.panelSongDisplay.SuspendLayout();
             this.panelSongs.SuspendLayout();
-            this.panelSong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playTrenutnuPesmu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPlay
@@ -75,7 +69,6 @@
             this.panelPlay.Controls.Add(this.nazadMalo);
             this.panelPlay.Controls.Add(this.PlaySong);
             this.panelPlay.Controls.Add(this.labelPesma);
-            this.panelPlay.Controls.Add(this.labelPevac);
             this.panelPlay.Controls.Add(this.labelTime);
             this.panelPlay.Controls.Add(this.timeToSongsEnd);
             this.panelPlay.Controls.Add(this.songVolumen);
@@ -120,20 +113,21 @@
             this.Pauza.BackColor = System.Drawing.Color.Black;
             this.Pauza.Image = ((System.Drawing.Image)(resources.GetObject("Pauza.Image")));
             this.Pauza.ImageActive = null;
-            this.Pauza.Location = new System.Drawing.Point(241, 47);
+            this.Pauza.Location = new System.Drawing.Point(127, 47);
             this.Pauza.Name = "Pauza";
             this.Pauza.Size = new System.Drawing.Size(32, 32);
             this.Pauza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Pauza.TabIndex = 10;
             this.Pauza.TabStop = false;
             this.Pauza.Zoom = 5;
+            this.Pauza.Click += new System.EventHandler(this.Pauza_Click);
             // 
             // napredMalo
             // 
             this.napredMalo.BackColor = System.Drawing.Color.Black;
             this.napredMalo.Image = ((System.Drawing.Image)(resources.GetObject("napredMalo.Image")));
             this.napredMalo.ImageActive = null;
-            this.napredMalo.Location = new System.Drawing.Point(185, 50);
+            this.napredMalo.Location = new System.Drawing.Point(83, 50);
             this.napredMalo.Name = "napredMalo";
             this.napredMalo.Size = new System.Drawing.Size(24, 24);
             this.napredMalo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -146,7 +140,7 @@
             this.nazadMalo.BackColor = System.Drawing.Color.Black;
             this.nazadMalo.Image = ((System.Drawing.Image)(resources.GetObject("nazadMalo.Image")));
             this.nazadMalo.ImageActive = null;
-            this.nazadMalo.Location = new System.Drawing.Point(110, 50);
+            this.nazadMalo.Location = new System.Drawing.Point(15, 50);
             this.nazadMalo.Name = "nazadMalo";
             this.nazadMalo.Size = new System.Drawing.Size(24, 24);
             this.nazadMalo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -159,7 +153,7 @@
             this.PlaySong.BackColor = System.Drawing.Color.Black;
             this.PlaySong.Image = ((System.Drawing.Image)(resources.GetObject("PlaySong.Image")));
             this.PlaySong.ImageActive = null;
-            this.PlaySong.Location = new System.Drawing.Point(145, 47);
+            this.PlaySong.Location = new System.Drawing.Point(45, 47);
             this.PlaySong.Name = "PlaySong";
             this.PlaySong.Size = new System.Drawing.Size(32, 32);
             this.PlaySong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -172,21 +166,10 @@
             // 
             this.labelPesma.AutoSize = true;
             this.labelPesma.ForeColor = System.Drawing.Color.SlateGray;
-            this.labelPesma.Location = new System.Drawing.Point(26, 66);
+            this.labelPesma.Location = new System.Drawing.Point(174, 58);
             this.labelPesma.Name = "labelPesma";
-            this.labelPesma.Size = new System.Drawing.Size(39, 13);
-            this.labelPesma.TabIndex = 5;
-            this.labelPesma.Text = "Pesma";
-            // 
-            // labelPevac
-            // 
-            this.labelPevac.AutoSize = true;
-            this.labelPevac.ForeColor = System.Drawing.Color.SlateGray;
-            this.labelPevac.Location = new System.Drawing.Point(26, 39);
-            this.labelPevac.Name = "labelPevac";
-            this.labelPevac.Size = new System.Drawing.Size(38, 13);
-            this.labelPevac.TabIndex = 4;
-            this.labelPevac.Text = "Pevac";
+            this.labelPesma.Size = new System.Drawing.Size(0, 13);
+            this.labelPesma.TabIndex = 4;
             // 
             // labelTime
             // 
@@ -222,6 +205,7 @@
             this.songVolumen.Size = new System.Drawing.Size(131, 30);
             this.songVolumen.TabIndex = 1;
             this.songVolumen.Value = 0;
+            this.songVolumen.ValueChanged += new System.EventHandler(this.songVolumen_ValueChanged);
             // 
             // songTime
             // 
@@ -237,6 +221,7 @@
             this.songTime.Size = new System.Drawing.Size(707, 30);
             this.songTime.TabIndex = 0;
             this.songTime.Value = 0;
+            this.songTime.ValueChanged += new System.EventHandler(this.songTime_ValueChanged);
             // 
             // panelSongDisplay
             // 
@@ -251,65 +236,6 @@
             this.panelSongDisplay.Size = new System.Drawing.Size(801, 347);
             this.panelSongDisplay.TabIndex = 1;
             // 
-            // panelSongs
-            // 
-            this.panelSongs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
-            this.panelSongs.Controls.Add(this.button1);
-            this.panelSongs.Controls.Add(this.panelSong);
-            this.panelSongs.Location = new System.Drawing.Point(0, 3);
-            this.panelSongs.Name = "panelSongs";
-            this.panelSongs.Size = new System.Drawing.Size(435, 344);
-            this.panelSongs.TabIndex = 0;
-            // 
-            // panelSong
-            // 
-            this.panelSong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSong.Controls.Add(this.playTrenutnuPesmu);
-            this.panelSong.Controls.Add(this.bunifuImageButton4);
-            this.panelSong.Location = new System.Drawing.Point(0, 0);
-            this.panelSong.Name = "panelSong";
-            this.panelSong.Size = new System.Drawing.Size(434, 93);
-            this.panelSong.TabIndex = 0;
-            // 
-            // playTrenutnuPesmu
-            // 
-            this.playTrenutnuPesmu.BackColor = System.Drawing.Color.Black;
-            this.playTrenutnuPesmu.Image = ((System.Drawing.Image)(resources.GetObject("playTrenutnuPesmu.Image")));
-            this.playTrenutnuPesmu.ImageActive = null;
-            this.playTrenutnuPesmu.Location = new System.Drawing.Point(142, 35);
-            this.playTrenutnuPesmu.Name = "playTrenutnuPesmu";
-            this.playTrenutnuPesmu.Size = new System.Drawing.Size(32, 32);
-            this.playTrenutnuPesmu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.playTrenutnuPesmu.TabIndex = 9;
-            this.playTrenutnuPesmu.TabStop = false;
-            this.playTrenutnuPesmu.Zoom = 5;
-            this.playTrenutnuPesmu.Click += new System.EventHandler(this.playTrenutnuPesmu_Click);
-            // 
-            // bunifuImageButton4
-            // 
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.Black;
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(12, 15);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(83, 68);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 0;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(182, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 84);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // SongList
             // 
             this.SongList.AccessibleName = "Songs";
@@ -319,13 +245,34 @@
             this.SongList.BackColor = System.Drawing.SystemColors.InfoText;
             this.SongList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(135)))), ((int)(((byte)(184)))));
             this.SongList.FormattingEnabled = true;
-            this.SongList.Location = new System.Drawing.Point(440, 3);
+            this.SongList.Location = new System.Drawing.Point(437, 3);
             this.SongList.Name = "SongList";
             this.SongList.Size = new System.Drawing.Size(361, 342);
             this.SongList.TabIndex = 1;
             this.SongList.DragDrop += new System.Windows.Forms.DragEventHandler(this.SongList_DragDrop);
             this.SongList.DragEnter += new System.Windows.Forms.DragEventHandler(this.SongList_DragEnter);
             this.SongList.DoubleClick += new System.EventHandler(this.doubleKlikNapesmu);
+            // 
+            // panelSongs
+            // 
+            this.panelSongs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
+            this.panelSongs.Controls.Add(this.player2);
+            this.panelSongs.Location = new System.Drawing.Point(3, 3);
+            this.panelSongs.Name = "panelSongs";
+            this.panelSongs.Size = new System.Drawing.Size(435, 344);
+            this.panelSongs.TabIndex = 0;
+            // 
+            // player2
+            // 
+            this.player2.Enabled = true;
+            this.player2.Location = new System.Drawing.Point(77, 70);
+            this.player2.Name = "player2";
+            this.player2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player2.OcxState")));
+            this.player2.Size = new System.Drawing.Size(298, 245);
+            this.player2.TabIndex = 0;
+            this.player2.Visible = false;
             // 
             // Songs
             // 
@@ -349,10 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PlaySong)).EndInit();
             this.panelSongDisplay.ResumeLayout(false);
             this.panelSongs.ResumeLayout(false);
-            this.panelSong.ResumeLayout(false);
-            this.panelSong.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playTrenutnuPesmu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,20 +308,16 @@
         private Bunifu.Framework.UI.BunifuSlider songTime;
         private Bunifu.Framework.UI.BunifuSlider songVolumen;
         private System.Windows.Forms.Label labelPesma;
-        private System.Windows.Forms.Label labelPevac;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Label timeToSongsEnd;
         private Bunifu.Framework.UI.BunifuImageButton PlaySong;
         private Bunifu.Framework.UI.BunifuImageButton napredMalo;
         private Bunifu.Framework.UI.BunifuImageButton nazadMalo;
         private System.Windows.Forms.Panel panelSongs;
-        private System.Windows.Forms.Panel panelSong;
-        private Bunifu.Framework.UI.BunifuImageButton playTrenutnuPesmu;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
         private Bunifu.Framework.UI.BunifuImageButton Pauza;
         private Bunifu.Framework.UI.BunifuImageButton IzaberiPesme;
         private Bunifu.Framework.UI.BunifuImageButton Mute;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox SongList;
+        private AxWMPLib.AxWindowsMediaPlayer player2;
     }
 }

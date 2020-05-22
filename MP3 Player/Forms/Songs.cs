@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,8 @@ namespace MP3_Player.Forms
 {
     public partial class Songs : Form
     {
-        WindowsMediaPlayer player = new WindowsMediaPlayer();
         String[] paths, files;
+        Timer t;
         public Songs()
         {
             InitializeComponent();
@@ -72,38 +73,46 @@ namespace MP3_Player.Forms
         // za dubel klik da se iz liste pusmi pesma
         private void doubleKlikNapesmu(object sender, EventArgs e)
         {
-            player.URL = paths[SongList.SelectedIndex];
-            player.controls.play();
-            player.settings.volume = 50;
-            songVolumen.Value = 50;
-        }
-
-        //Dugme za play u listi
-        private void playTrenutnuPesmu_Click(object sender, EventArgs e)
-        {
-            player.URL = paths[SongList.SelectedIndex];
-            player.controls.play();
+            player2.URL = paths[SongList.SelectedIndex];
+            player2.Ctlcontrols.play();
+            labelPesma.Text = files[SongList.SelectedIndex];
         }
         //Dugme za play 
         private void PlaySong_Click(object sender, EventArgs e)
         {
-            player.URL = paths[SongList.SelectedIndex];
-            player.controls.play();
+            player2.URL = paths[SongList.SelectedIndex];
+            player2.Ctlcontrols.play();
+            labelPesma.Text = files[SongList.SelectedIndex];
         }
 
         
 
+        private void songVolumen_ValueChanged(object sender, EventArgs e)
+        {
+            player2.settings.volume = songVolumen.Value;
+        }
+
+        private void Pauza_Click(object sender, EventArgs e)
+        {
+            player2.Ctlcontrols.stop();
+        }
+
+        private void songTime_ValueChanged(object sender, EventArgs e)
+        {
+            this.player2.Ctlcontrols.currentPosition = songTime.Value;
+        }
+
         private void Mute_Click(object sender, EventArgs e)
         {
-            if(player.settings.mute == false)
+            if(player2.settings.mute == false)
             {
-                player.settings.mute = true;
+                player2.settings.mute = true;
                 Mute.Image = MP3_Player.Properties.Resources.mute;
             }
             else
             {
                 Mute.Image = MP3_Player.Properties.Resources.audio;
-                player.settings.mute = false;
+                player2.settings.mute = false;
             }
         }
 
