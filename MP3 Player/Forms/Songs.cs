@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,92 +17,144 @@ namespace MP3_Player.Forms
     public partial class Songs : Form
     {
         String[] paths, files;
-        Timer t;
+        int index = 0, br = 0;
         public Songs()
         {
             InitializeComponent();
+            player2.uiMode = "None";
         }
 
-        // Za drag i drop opciju kod
-        private void SongList_DragDrop(object sender, DragEventArgs e)
+        //Vraca indeks trenutne pesme u playlisti
+        private int indeksTrenutnrPesme(AxWindowsMediaPlayer p)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) == true)
+            for (int i = 0; i < p.currentPlaylist.count; i++)
             {
-                e.Effect = DragDropEffects.All;
+                if (player2.currentMedia.isIdentical[p.currentPlaylist.Item[i]])
+                {
+                    index = i;
+                    break;
+                }
             }
+            return index;
         }
 
-        private void SongList_DragEnter(object sender, DragEventArgs e)
-        {
-            string[] dropFiles = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            
-            paths = (string[])e.Data.GetData(DataFormats.FileDrop);
-           
-
-            foreach (string file in dropFiles)
-            {
-                string fileName = getFileName(file);
-                SongList.Items.Add(fileName);
-            }
-        }
-
-        private string getFileName(string path)
-        {
-            return Path.GetFileNameWithoutExtension(path);
-        }
-
-        // Za ubacivanje preko dugmeta
+        // Za ubacivanje preko pesama
         private void IzaberiPesme_Click_1(object sender, EventArgs e)
         {
+
+            WMPLib.IWMPPlaylist playlist = player2.playlistCollection.newPlaylist("myplaylist");
+            WMPLib.IWMPMedia media;
             OpenFileDialog fDialog = new OpenFileDialog();
 
+
+            //Da moze vise od jedne pesme da se ubaci od jednom
             fDialog.Multiselect = true;
-            if (fDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+
+            //Ubacivanje u kreiranu playListu
+            if (fDialog.ShowDialog() == DialogResult.OK)
             {
                 files = fDialog.SafeFileNames;
                 paths = fDialog.FileNames;
-
-                for (int i = 0; i < files.Length; i++)
+                foreach (string file in fDialog.FileNames)
                 {
-                    SongList.Items.Add(files[i]);
+                    media = player2.newMedia(file);
+                    playlist.appendItem(media);
+                    br++;
                 }
+            }
+
+            player2.currentPlaylist = playlist;
+            index = indeksTrenutnrPesme(player2);
+            labelPesma.Text = files[index];
+        }
+
+        //Dugme za play i pauzu
+        private void PlaySong_Click(object sender, EventArgs e)
+        {
+            if(player2.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                player2.Ctlcontrols.pause();
+            }
+            else
+            {
+                player2.Ctlcontrols.play();
             }
         }
 
-
-        // za dubel klik da se iz liste pusmi pesma
-        private void doubleKlikNapesmu(object sender, EventArgs e)
-        {
-            player2.URL = paths[SongList.SelectedIndex];
-            player2.Ctlcontrols.play();
-            labelPesma.Text = files[SongList.SelectedIndex];
-        }
-        //Dugme za play 
-        private void PlaySong_Click(object sender, EventArgs e)
-        {
-            player2.URL = paths[SongList.SelectedIndex];
-            player2.Ctlcontrols.play();
-            labelPesma.Text = files[SongList.SelectedIndex];
-        }
-
-        
-
+        //Za kontrolu zvuka
         private void songVolumen_ValueChanged(object sender, EventArgs e)
         {
             player2.settings.volume = songVolumen.Value;
         }
 
-        private void Pauza_Click(object sender, EventArgs e)
+
+        //Dugme da se psema zaustavi
+        private void Stop_Click(object sender, EventArgs e)
         {
             player2.Ctlcontrols.stop();
         }
 
-        private void songTime_ValueChanged(object sender, EventArgs e)
+
+        //Code za tracBar, da moze da prati trajnost pesme
+        //Kao i ako je pesma pauzirana da se dugme za play promeni u paus btn i okrenuto
+        private void player2_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
-            this.player2.Ctlcontrols.currentPosition = songTime.Value;
+            if(player2.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                PlaySong.Image = MP3_Player.Properties.Resources.pause_button;
+                songVolumen.Value = 50;
+                songTime.MaximumValue = (int)player2.Ctlcontrols.currentItem.duration;
+                timer1.Start();
+                index = indeksTrenutnrPesme(player2);
+                labelPesma.Text = files[index];
+            }
+            else if(player2.playState == WMPLib.WMPPlayState.wmppsPaused)
+            {
+                PlaySong.Image = MP3_Player.Properties.Resources.multimedia;
+                timer1.Stop();
+            }
+            else if(player2.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                PlaySong.Image = MP3_Player.Properties.Resources.multimedia;
+                timer1.Stop();
+                songTime.Value = 0;
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timeToSongsEnd.Text = player2.Ctlcontrols.currentPositionString;
+            labelTime.Text = player2.Ctlcontrols.currentItem.durationString.ToString();
+            if (player2.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                songTime.Value = (int)player2.Ctlcontrols.currentPosition;
+            }
         }
 
+
+        //Za prebacivanje na sledecu pesmu
+        private void sledecaPesma_Click(object sender, EventArgs e)
+        {
+            player2.Ctlcontrols.next();
+            index = indeksTrenutnrPesme(player2);
+            labelPesma.Text = files[index];
+        }
+
+        //Za vracanje na predhodnu pesmu
+        private void predhodnaPesma_Click(object sender, EventArgs e)
+        {
+            player2.Ctlcontrols.previous();
+            index = indeksTrenutnrPesme(player2);
+            labelPesma.Text = files[index];
+        }
+
+        //Za kontrolu vremena u pesmi
+        private void songTime_ValueChanged(object sender, EventArgs e)
+        {
+            player2.Ctlcontrols.currentPosition = songTime.Value;
+        }
+
+
+        //Za mutovanje zvuka
         private void Mute_Click(object sender, EventArgs e)
         {
             if(player2.settings.mute == false)
@@ -115,7 +168,5 @@ namespace MP3_Player.Forms
                 player2.settings.mute = false;
             }
         }
-
-        
     }
 }
