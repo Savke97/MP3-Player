@@ -41,10 +41,12 @@ namespace MP3_Player.Forms
         // Za ubacivanje preko pesama
         private void IzaberiPesme_Click_1(object sender, EventArgs e)
         {
-
             WMPLib.IWMPPlaylist playlist = player2.playlistCollection.newPlaylist("myplaylist");
             WMPLib.IWMPMedia media;
             OpenFileDialog fDialog = new OpenFileDialog();
+
+            //Samo da moze da se ubacuje mp3 i ostali muzicki failovi
+            fDialog.Filter = "MP3|*.mp3";
 
 
             //Da moze vise od jedne pesme da se ubaci od jednom
@@ -66,6 +68,16 @@ namespace MP3_Player.Forms
             player2.currentPlaylist = playlist;
             index = indeksTrenutnrPesme(player2);
             labelPesma.Text = files[index];
+
+
+            //Za display u listBoxSong
+            for (int i = 0; i < playlist.count; i++)
+            {
+                string strItemName = playlist.get_Item(i).name;
+                listBoxSongs.Items.Add(strItemName);
+            }
+            
+
         }
 
         //Dugme za play i pauzu

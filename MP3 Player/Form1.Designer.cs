@@ -243,7 +243,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Script MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(3, 143);
+            this.label2.Location = new System.Drawing.Point(3, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 24);
             this.label2.TabIndex = 4;
@@ -288,7 +288,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Script MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(3, 313);
+            this.label1.Location = new System.Drawing.Point(3, 344);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 1;

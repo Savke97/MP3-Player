@@ -46,6 +46,7 @@
             this.panelSongs = new System.Windows.Forms.Panel();
             this.player2 = new AxWMPLib.AxWindowsMediaPlayer();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listBoxSongs = new System.Windows.Forms.ListBox();
             this.panelPlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IzaberiPesme)).BeginInit();
@@ -74,9 +75,9 @@
             this.panelPlay.Controls.Add(this.timeToSongsEnd);
             this.panelPlay.Controls.Add(this.songVolumen);
             this.panelPlay.Controls.Add(this.songTime);
-            this.panelPlay.Location = new System.Drawing.Point(-3, 346);
+            this.panelPlay.Location = new System.Drawing.Point(-3, 430);
             this.panelPlay.Name = "panelPlay";
-            this.panelPlay.Size = new System.Drawing.Size(804, 105);
+            this.panelPlay.Size = new System.Drawing.Size(768, 105);
             this.panelPlay.TabIndex = 0;
             // 
             // Mute
@@ -85,7 +86,7 @@
             this.Mute.BackColor = System.Drawing.Color.Black;
             this.Mute.Image = ((System.Drawing.Image)(resources.GetObject("Mute.Image")));
             this.Mute.ImageActive = null;
-            this.Mute.Location = new System.Drawing.Point(572, 46);
+            this.Mute.Location = new System.Drawing.Point(536, 46);
             this.Mute.Name = "Mute";
             this.Mute.Size = new System.Drawing.Size(32, 32);
             this.Mute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -100,7 +101,7 @@
             this.IzaberiPesme.BackColor = System.Drawing.Color.Black;
             this.IzaberiPesme.Image = ((System.Drawing.Image)(resources.GetObject("IzaberiPesme.Image")));
             this.IzaberiPesme.ImageActive = null;
-            this.IzaberiPesme.Location = new System.Drawing.Point(526, 46);
+            this.IzaberiPesme.Location = new System.Drawing.Point(490, 46);
             this.IzaberiPesme.Name = "IzaberiPesme";
             this.IzaberiPesme.Size = new System.Drawing.Size(32, 32);
             this.IzaberiPesme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -179,7 +180,7 @@
             this.labelTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTime.AutoSize = true;
             this.labelTime.ForeColor = System.Drawing.Color.GhostWhite;
-            this.labelTime.Location = new System.Drawing.Point(762, 10);
+            this.labelTime.Location = new System.Drawing.Point(726, 10);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(0, 13);
             this.labelTime.TabIndex = 3;
@@ -200,7 +201,7 @@
             this.songVolumen.BackgroudColor = System.Drawing.Color.DarkGray;
             this.songVolumen.BorderRadius = 5;
             this.songVolumen.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(135)))), ((int)(((byte)(184)))));
-            this.songVolumen.Location = new System.Drawing.Point(620, 49);
+            this.songVolumen.Location = new System.Drawing.Point(584, 49);
             this.songVolumen.MaximumValue = 100;
             this.songVolumen.Name = "songVolumen";
             this.songVolumen.Size = new System.Drawing.Size(131, 30);
@@ -219,7 +220,7 @@
             this.songTime.Location = new System.Drawing.Point(60, 4);
             this.songTime.MaximumValue = 100;
             this.songTime.Name = "songTime";
-            this.songTime.Size = new System.Drawing.Size(691, 30);
+            this.songTime.Size = new System.Drawing.Size(655, 30);
             this.songTime.TabIndex = 0;
             this.songTime.Value = 0;
             this.songTime.ValueChanged += new System.EventHandler(this.songTime_ValueChanged);
@@ -233,7 +234,7 @@
             this.panelSongDisplay.Controls.Add(this.panelSongs);
             this.panelSongDisplay.Location = new System.Drawing.Point(0, 0);
             this.panelSongDisplay.Name = "panelSongDisplay";
-            this.panelSongDisplay.Size = new System.Drawing.Size(801, 344);
+            this.panelSongDisplay.Size = new System.Drawing.Size(765, 428);
             this.panelSongDisplay.TabIndex = 1;
             // 
             // panelSongs
@@ -245,7 +246,7 @@
             this.panelSongs.Controls.Add(this.player2);
             this.panelSongs.Location = new System.Drawing.Point(-3, 0);
             this.panelSongs.Name = "panelSongs";
-            this.panelSongs.Size = new System.Drawing.Size(804, 344);
+            this.panelSongs.Size = new System.Drawing.Size(768, 428);
             this.panelSongs.TabIndex = 0;
             // 
             // player2
@@ -254,10 +255,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.player2.Enabled = true;
-            this.player2.Location = new System.Drawing.Point(0, 3);
+            this.player2.Location = new System.Drawing.Point(0, 0);
             this.player2.Name = "player2";
             this.player2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player2.OcxState")));
-            this.player2.Size = new System.Drawing.Size(804, 344);
+            this.player2.Size = new System.Drawing.Size(768, 431);
             this.player2.TabIndex = 0;
             this.player2.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.player2_PlayStateChange);
             // 
@@ -265,12 +266,28 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // listBoxSongs
+            // 
+            this.listBoxSongs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.listBoxSongs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxSongs.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSongs.ForeColor = System.Drawing.Color.White;
+            this.listBoxSongs.FormattingEnabled = true;
+            this.listBoxSongs.ItemHeight = 14;
+            this.listBoxSongs.Location = new System.Drawing.Point(767, 0);
+            this.listBoxSongs.Name = "listBoxSongs";
+            this.listBoxSongs.Size = new System.Drawing.Size(202, 532);
+            this.listBoxSongs.TabIndex = 2;
+            // 
             // Songs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(970, 534);
+            this.Controls.Add(this.listBoxSongs);
             this.Controls.Add(this.panelSongDisplay);
             this.Controls.Add(this.panelPlay);
             this.ForeColor = System.Drawing.Color.BlueViolet;
@@ -304,11 +321,12 @@
         private Bunifu.Framework.UI.BunifuImageButton PlaySong;
         private Bunifu.Framework.UI.BunifuImageButton sledecaPesma;
         private Bunifu.Framework.UI.BunifuImageButton predhodnaPesma;
-        private System.Windows.Forms.Panel panelSongs;
         private Bunifu.Framework.UI.BunifuImageButton Stop;
         private Bunifu.Framework.UI.BunifuImageButton IzaberiPesme;
         private Bunifu.Framework.UI.BunifuImageButton Mute;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelSongs;
         private AxWMPLib.AxWindowsMediaPlayer player2;
+        private System.Windows.Forms.ListBox listBoxSongs;
     }
 }

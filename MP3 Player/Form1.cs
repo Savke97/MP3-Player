@@ -24,8 +24,8 @@ namespace MP3_Player
             random = new Random();
             // Da moze prozor programa kureserom da se smanjuje i povecava
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-        }  
-        
+        }
+
 
         private Color SelektujBojuTheme()
         {
@@ -42,9 +42,9 @@ namespace MP3_Player
 
         private void AktiviranoDugme(object btnSender)
         {
-            if(btnSender != null)
+            if (btnSender != null)
             {
-                if(trenutnoDugme != (Button)btnSender)
+                if (trenutnoDugme != (Button)btnSender)
                 {
                     Deaktivirajdugme();
                     Color boja = SelektujBojuTheme();
@@ -60,9 +60,9 @@ namespace MP3_Player
 
         private void Deaktivirajdugme()
         {
-            foreach(Control predhodnoDugme in Options.Controls)
+            foreach (Control predhodnoDugme in Options.Controls)
             {
-                if(predhodnoDugme.GetType() == typeof(Button))
+                if (predhodnoDugme.GetType() == typeof(Button))
                 {
                     predhodnoDugme.BackColor = Color.FromArgb(51, 51, 76);
                     predhodnoDugme.ForeColor = Color.Gainsboro;
@@ -77,9 +77,9 @@ namespace MP3_Player
             trenutnoDugme.BackColor = ColorTranslator.FromHtml(n);
         }
 
-        private void OpenChildForm(Form childeForm, object btnSender)
+        public void OpenChildForm(Form childeForm, object btnSender)
         {
-            if(activeForm != null)
+            if (activeForm != null)
             {
                 activeForm.Close();
             }
@@ -139,7 +139,7 @@ namespace MP3_Player
         // Dugme za Uvelicavanje i smanjivanje
         private void button7_Click(object sender, EventArgs e)
         {
-            if(this.WindowState == FormWindowState.Maximized)
+            if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
             }
