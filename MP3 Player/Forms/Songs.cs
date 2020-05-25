@@ -46,7 +46,7 @@ namespace MP3_Player.Forms
             OpenFileDialog fDialog = new OpenFileDialog();
 
             //Samo da moze da se ubacuje mp3 i ostali muzicki failovi
-            fDialog.Filter = "MP3|*.mp3";
+            fDialog.Filter = ".mp3|*.mp3";
 
 
             //Da moze vise od jedne pesme da se ubaci od jednom

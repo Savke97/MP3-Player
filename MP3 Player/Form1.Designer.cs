@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Options = new System.Windows.Forms.Panel();
+            this.BAR = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.kureserKontrolPanel = new System.Windows.Forms.Panel();
             this.pomeranjeProzora1 = new MP3_Player.PomeranjeProzora();
@@ -58,6 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Options.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.Options.Controls.Add(this.BAR);
             this.Options.Controls.Add(this.panelDesktop);
             this.Options.Controls.Add(this.kureserKontrolPanel);
             this.Options.Controls.Add(this.logoBar);
@@ -74,6 +76,15 @@
             this.Options.Name = "Options";
             this.Options.Size = new System.Drawing.Size(1188, 681);
             this.Options.TabIndex = 0;
+            // 
+            // BAR
+            // 
+            this.BAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
+            this.BAR.Location = new System.Drawing.Point(982, 39);
+            this.BAR.Name = "BAR";
+            this.BAR.Size = new System.Drawing.Size(206, 86);
+            this.BAR.TabIndex = 3;
             // 
             // panelDesktop
             // 
@@ -169,14 +180,15 @@
             // 
             // titlBar
             // 
-            this.titlBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.titlBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titlBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(80)))));
             this.titlBar.Controls.Add(this.labelOption);
             this.titlBar.Controls.Add(this.labelTiltle);
             this.titlBar.Location = new System.Drawing.Point(202, 39);
             this.titlBar.Name = "titlBar";
-            this.titlBar.Size = new System.Drawing.Size(986, 86);
+            this.titlBar.Size = new System.Drawing.Size(781, 86);
             this.titlBar.TabIndex = 1;
             // 
             // labelOption
@@ -189,11 +201,11 @@
             // 
             // labelTiltle
             // 
-            this.labelTiltle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTiltle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTiltle.AutoSize = true;
             this.labelTiltle.Font = new System.Drawing.Font("Script MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTiltle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTiltle.Location = new System.Drawing.Point(452, 23);
+            this.labelTiltle.Location = new System.Drawing.Point(364, 36);
             this.labelTiltle.Name = "labelTiltle";
             this.labelTiltle.Size = new System.Drawing.Size(79, 24);
             this.labelTiltle.TabIndex = 12;
@@ -353,6 +365,7 @@
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Label labelTiltle;
         private System.Windows.Forms.Label labelOption;
+        private System.Windows.Forms.Panel BAR;
     }
 }
 

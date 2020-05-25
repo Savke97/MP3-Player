@@ -54,6 +54,7 @@ namespace MP3_Player
                     trenutnoDugme.Font = new System.Drawing.Font("Script MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     titlBar.BackColor = boja;
                     logoBar.BackColor = ThemeColor.PromeniOsvetljenjeBoje(boja, -0.3);
+                    BAR.BackColor = ThemeColor.PromeniOsvetljenjeBoje(boja, -0.3);
                 }
             }
         }

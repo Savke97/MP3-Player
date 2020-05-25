@@ -65,12 +65,6 @@
     <Compile Include="Forms\Albumi.Designer.cs">
       <DependentUpon>Albumi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SongList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SongList.Designer.cs">
-      <DependentUpon>SongList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Songs.cs">
       <SubType>Form</SubType>
     </Compile>
