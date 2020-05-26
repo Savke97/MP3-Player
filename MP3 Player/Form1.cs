@@ -118,7 +118,7 @@ namespace MP3_Player
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AktiviranoDugme(sender);
+            OpenChildForm(new Forms.Radio(), sender);
         }
 
 

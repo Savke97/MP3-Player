@@ -38,6 +38,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.logoBar = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.titlBar = new System.Windows.Forms.Panel();
             this.labelOption = new System.Windows.Forms.Label();
             this.labelTiltle = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Options.SuspendLayout();
             this.kureserKontrolPanel.SuspendLayout();
+            this.logoBar.SuspendLayout();
             this.titlBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,10 +175,24 @@
             // logoBar
             // 
             this.logoBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(100)))));
+            this.logoBar.Controls.Add(this.label3);
+            this.logoBar.Font = new System.Drawing.Font("Script MT Bold", 18F);
             this.logoBar.Location = new System.Drawing.Point(0, 39);
             this.logoBar.Name = "logoBar";
             this.logoBar.Size = new System.Drawing.Size(203, 86);
             this.logoBar.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(65, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 29);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Ren";
             // 
             // titlBar
             // 
@@ -340,6 +356,8 @@
             this.Options.ResumeLayout(false);
             this.Options.PerformLayout();
             this.kureserKontrolPanel.ResumeLayout(false);
+            this.logoBar.ResumeLayout(false);
+            this.logoBar.PerformLayout();
             this.titlBar.ResumeLayout(false);
             this.titlBar.PerformLayout();
             this.ResumeLayout(false);
@@ -366,6 +384,7 @@
         private System.Windows.Forms.Label labelTiltle;
         private System.Windows.Forms.Label labelOption;
         private System.Windows.Forms.Panel BAR;
+        private System.Windows.Forms.Label label3;
     }
 }
 

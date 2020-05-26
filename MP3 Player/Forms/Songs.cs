@@ -64,20 +64,18 @@ namespace MP3_Player.Forms
                     br++;
                 }
             }
-
             player2.currentPlaylist = playlist;
             index = indeksTrenutnrPesme(player2);
             labelPesma.Text = files[index];
 
 
             //Za display u listBoxSong
+
             for (int i = 0; i < playlist.count; i++)
             {
                 string strItemName = playlist.get_Item(i).name;
                 listBoxSongs.Items.Add(strItemName);
             }
-            
-
         }
 
         //Dugme za play i pauzu
@@ -105,7 +103,6 @@ namespace MP3_Player.Forms
         {
             player2.Ctlcontrols.stop();
         }
-
 
         //Code za tracBar, da moze da prati trajnost pesme
         //Kao i ako je pesma pauzirana da se dugme za play promeni u paus btn i okrenuto
