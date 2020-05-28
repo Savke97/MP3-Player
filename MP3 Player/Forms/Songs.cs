@@ -68,14 +68,26 @@ namespace MP3_Player.Forms
             index = indeksTrenutnrPesme(player2);
             labelPesma.Text = files[index];
 
+            
+
+
+            // Za uklanjanje ako se ponovo ubacuju pesme
+            if (listBoxSongs.Items.Count > 0)
+            {
+                for (int i = listBoxSongs.Items.Count - 1; i > -1; i--)
+                {
+                    listBoxSongs.Items.RemoveAt(i);
+                }
+            }
 
             //Za display u listBoxSong
-
             for (int i = 0; i < playlist.count; i++)
             {
                 string strItemName = playlist.get_Item(i).name;
                 listBoxSongs.Items.Add(strItemName);
             }
+
+            
         }
 
         //Dugme za play i pauzu
@@ -154,6 +166,29 @@ namespace MP3_Player.Forms
             player2.Ctlcontrols.previous();
             index = indeksTrenutnrPesme(player2);
             labelPesma.Text = files[index];
+        }
+
+        //Za prebacivanje na sledecu pesmu kad se izbere iz listBoxa
+        private void listBoxSongs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            index = indeksTrenutnrPesme(player2);
+            if (listBoxSongs.SelectedIndex != index)
+            {
+                if(listBoxSongs.SelectedIndex > index)
+                {
+                    for (int i = index; i < listBoxSongs.SelectedIndex; i++)
+                    {
+                        player2.Ctlcontrols.next();
+                    }
+                }
+                if(listBoxSongs.SelectedIndex < index)
+                {
+                    for (int i = index; i > listBoxSongs.SelectedIndex; i--)
+                    {
+                        player2.Ctlcontrols.previous();
+                    }
+                }
+            }
         }
 
         //Za kontrolu vremena u pesmi

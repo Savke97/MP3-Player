@@ -280,6 +280,7 @@
             this.listBoxSongs.Name = "listBoxSongs";
             this.listBoxSongs.Size = new System.Drawing.Size(206, 546);
             this.listBoxSongs.TabIndex = 2;
+            this.listBoxSongs.SelectedIndexChanged += new System.EventHandler(this.listBoxSongs_SelectedIndexChanged);
             // 
             // Songs
             // 

@@ -152,10 +152,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.player2.Enabled = true;
-            this.player2.Location = new System.Drawing.Point(-1, 0);
+            this.player2.Location = new System.Drawing.Point(-1, 1);
             this.player2.Name = "player2";
             this.player2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player2.OcxState")));
-            this.player2.Size = new System.Drawing.Size(781, 486);
+            this.player2.Size = new System.Drawing.Size(781, 485);
             this.player2.TabIndex = 2;
             // 
             // listBoxSongs
