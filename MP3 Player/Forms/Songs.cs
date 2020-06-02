@@ -87,7 +87,11 @@ namespace MP3_Player.Forms
                 listBoxSongs.Items.Add(strItemName);
             }
 
-            
+
+
+            //Za brisanje pesama da bude vidljivo
+            deletSong.Visible = true;
+            deleteSongs.Visible = true;
         }
 
         //Dugme za play i pauzu
@@ -189,6 +193,31 @@ namespace MP3_Player.Forms
                     }
                 }
             }
+        }
+
+        //Za brisanje selektovane pesme
+        private void deletSongs_Click(object sender, EventArgs e)
+        {
+            if(listBoxSongs.SelectedIndex > -1)
+            {
+                listBoxSongs.Items.RemoveAt(listBoxSongs.SelectedIndex);
+            }
+        }
+
+        //Za brisanje pesama kad se icona kante stisne
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            listBoxSongs.Items.Clear();
+            WMPLib.IWMPPlaylist playlist = player2.playlistCollection.newPlaylist("Delet");
+            player2.currentPlaylist = playlist;
+            labelTime.Text = "";
+            labelPesma.Text = "";
+            timeToSongsEnd.Text = "";
+            timer1.Stop();
+            songTime.Value = 0;
+            songVolumen.Value = 0;
+            deletSong.Visible = false;
+            deleteSongs.Visible = false;
         }
 
         //Za kontrolu vremena u pesmi

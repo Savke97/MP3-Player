@@ -47,6 +47,8 @@
             this.player2 = new AxWMPLib.AxWindowsMediaPlayer();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.listBoxSongs = new System.Windows.Forms.ListBox();
+            this.deletSong = new Bunifu.Framework.UI.BunifuImageButton();
+            this.deleteSongs = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelPlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IzaberiPesme)).BeginInit();
@@ -57,6 +59,8 @@
             this.panelSongDisplay.SuspendLayout();
             this.panelSongs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deletSong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteSongs)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPlay
@@ -272,15 +276,46 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.listBoxSongs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxSongs.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSongs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxSongs.ForeColor = System.Drawing.Color.White;
             this.listBoxSongs.FormattingEnabled = true;
-            this.listBoxSongs.ItemHeight = 14;
-            this.listBoxSongs.Location = new System.Drawing.Point(783, 8);
+            this.listBoxSongs.Location = new System.Drawing.Point(783, 2);
             this.listBoxSongs.Name = "listBoxSongs";
-            this.listBoxSongs.Size = new System.Drawing.Size(206, 546);
+            this.listBoxSongs.Size = new System.Drawing.Size(206, 507);
             this.listBoxSongs.TabIndex = 2;
             this.listBoxSongs.SelectedIndexChanged += new System.EventHandler(this.listBoxSongs_SelectedIndexChanged);
+            // 
+            // deletSong
+            // 
+            this.deletSong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deletSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.deletSong.Image = ((System.Drawing.Image)(resources.GetObject("deletSong.Image")));
+            this.deletSong.ImageActive = null;
+            this.deletSong.Location = new System.Drawing.Point(904, 515);
+            this.deletSong.Name = "deletSong";
+            this.deletSong.Size = new System.Drawing.Size(32, 32);
+            this.deletSong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.deletSong.TabIndex = 13;
+            this.deletSong.TabStop = false;
+            this.deletSong.Visible = false;
+            this.deletSong.Zoom = 10;
+            this.deletSong.Click += new System.EventHandler(this.deletSongs_Click);
+            // 
+            // deleteSongs
+            // 
+            this.deleteSongs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.deleteSongs.Image = ((System.Drawing.Image)(resources.GetObject("deleteSongs.Image")));
+            this.deleteSongs.ImageActive = null;
+            this.deleteSongs.Location = new System.Drawing.Point(942, 515);
+            this.deleteSongs.Name = "deleteSongs";
+            this.deleteSongs.Size = new System.Drawing.Size(32, 32);
+            this.deleteSongs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.deleteSongs.TabIndex = 14;
+            this.deleteSongs.TabStop = false;
+            this.deleteSongs.Visible = false;
+            this.deleteSongs.Zoom = 10;
+            this.deleteSongs.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // Songs
             // 
@@ -288,6 +323,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(986, 556);
+            this.Controls.Add(this.deleteSongs);
+            this.Controls.Add(this.deletSong);
             this.Controls.Add(this.listBoxSongs);
             this.Controls.Add(this.panelSongDisplay);
             this.Controls.Add(this.panelPlay);
@@ -306,6 +343,8 @@
             this.panelSongDisplay.ResumeLayout(false);
             this.panelSongs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deletSong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteSongs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,5 +368,7 @@
         private System.Windows.Forms.Panel panelSongs;
         private AxWMPLib.AxWindowsMediaPlayer player2;
         private System.Windows.Forms.ListBox listBoxSongs;
+        private Bunifu.Framework.UI.BunifuImageButton deletSong;
+        private Bunifu.Framework.UI.BunifuImageButton deleteSongs;
     }
 }

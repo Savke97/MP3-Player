@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Radio));
             this.panelPlay = new System.Windows.Forms.Panel();
             this.Mute = new Bunifu.Framework.UI.BunifuImageButton();
-            this.IzaberiPesme = new Bunifu.Framework.UI.BunifuImageButton();
             this.Stop = new Bunifu.Framework.UI.BunifuImageButton();
             this.PlaySong = new Bunifu.Framework.UI.BunifuImageButton();
             this.timeToSongsEnd = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panelPlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IzaberiPesme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlaySong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
@@ -55,7 +53,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelPlay.Controls.Add(this.Mute);
-            this.panelPlay.Controls.Add(this.IzaberiPesme);
             this.panelPlay.Controls.Add(this.Stop);
             this.panelPlay.Controls.Add(this.PlaySong);
             this.panelPlay.Controls.Add(this.timeToSongsEnd);
@@ -71,7 +68,7 @@
             this.Mute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.Mute.Image = ((System.Drawing.Image)(resources.GetObject("Mute.Image")));
             this.Mute.ImageActive = null;
-            this.Mute.Location = new System.Drawing.Point(612, 37);
+            this.Mute.Location = new System.Drawing.Point(609, 37);
             this.Mute.Name = "Mute";
             this.Mute.Size = new System.Drawing.Size(32, 32);
             this.Mute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -79,20 +76,6 @@
             this.Mute.TabStop = false;
             this.Mute.Zoom = 10;
             this.Mute.Click += new System.EventHandler(this.Mute_Click);
-            // 
-            // IzaberiPesme
-            // 
-            this.IzaberiPesme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.IzaberiPesme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.IzaberiPesme.Image = ((System.Drawing.Image)(resources.GetObject("IzaberiPesme.Image")));
-            this.IzaberiPesme.ImageActive = null;
-            this.IzaberiPesme.Location = new System.Drawing.Point(574, 37);
-            this.IzaberiPesme.Name = "IzaberiPesme";
-            this.IzaberiPesme.Size = new System.Drawing.Size(32, 32);
-            this.IzaberiPesme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.IzaberiPesme.TabIndex = 11;
-            this.IzaberiPesme.TabStop = false;
-            this.IzaberiPesme.Zoom = 10;
             // 
             // Stop
             // 
@@ -164,10 +147,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxSongs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.listBoxSongs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxSongs.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSongs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxSongs.ForeColor = System.Drawing.Color.White;
             this.listBoxSongs.FormattingEnabled = true;
-            this.listBoxSongs.ItemHeight = 14;
             this.listBoxSongs.Location = new System.Drawing.Point(781, 6);
             this.listBoxSongs.Name = "listBoxSongs";
             this.listBoxSongs.Size = new System.Drawing.Size(206, 546);
@@ -189,7 +171,6 @@
             this.panelPlay.ResumeLayout(false);
             this.panelPlay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IzaberiPesme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlaySong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
@@ -201,7 +182,6 @@
 
         private System.Windows.Forms.Panel panelPlay;
         private Bunifu.Framework.UI.BunifuImageButton Mute;
-        private Bunifu.Framework.UI.BunifuImageButton IzaberiPesme;
         private Bunifu.Framework.UI.BunifuImageButton Stop;
         private Bunifu.Framework.UI.BunifuImageButton PlaySong;
         private System.Windows.Forms.Label timeToSongsEnd;
