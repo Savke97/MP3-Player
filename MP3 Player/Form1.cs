@@ -101,17 +101,12 @@ namespace MP3_Player
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.PlayLists(), sender);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AktiviranoDugme(sender);
+            OpenChildForm(new Forms.Register(), sender);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AktiviranoDugme(sender);
+            OpenChildForm(new Forms.LogIn(), sender);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -170,5 +165,7 @@ namespace MP3_Player
         {
             Boja(sender, "42, 153, 23");
         }
+
+        
     }
 }
