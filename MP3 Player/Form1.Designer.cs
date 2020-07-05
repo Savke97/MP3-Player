@@ -44,7 +44,6 @@
             this.labelOption = new System.Windows.Forms.Label();
             this.labelTiltle = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Options.SuspendLayout();
             this.kureserKontrolPanel.SuspendLayout();
@@ -65,7 +64,6 @@
             this.Options.Controls.Add(this.logoBar);
             this.Options.Controls.Add(this.titlBar);
             this.Options.Controls.Add(this.button5);
-            this.Options.Controls.Add(this.button4);
             this.Options.Controls.Add(this.button1);
             this.Options.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Options.Location = new System.Drawing.Point(0, 0);
@@ -82,7 +80,7 @@
             this.button2.ForeColor = System.Drawing.Color.Ivory;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 299);
+            this.button2.Location = new System.Drawing.Point(0, 251);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(203, 42);
             this.button2.TabIndex = 12;
@@ -260,25 +258,6 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.button4.ForeColor = System.Drawing.Color.Ivory;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 251);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(203, 42);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "   Log In";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
@@ -324,7 +303,6 @@
         private System.Windows.Forms.Panel titlBar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;

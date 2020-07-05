@@ -104,11 +104,6 @@ namespace MP3_Player
             OpenChildForm(new Forms.Register(), sender);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.LogIn(), sender);
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.Radio(), sender);

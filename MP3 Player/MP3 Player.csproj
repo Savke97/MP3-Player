@@ -80,12 +80,6 @@
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LogIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LogIn.Designer.cs">
-      <DependentUpon>LogIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Radio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Log_InDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Log_InDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Log_InDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PomeranjeProzora.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -122,9 +121,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LogIn.resx">
-      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Radio.resx">
       <DependentUpon>Radio.cs</DependentUpon>
@@ -147,6 +143,17 @@
     </None>
     <None Include="Log_InDataSet.xss">
       <DependentUpon>Log_InDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Log_InDataSet1.xsc">
+      <DependentUpon>Log_InDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Log_InDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Log_InDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Log_InDataSet1.xss">
+      <DependentUpon>Log_InDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

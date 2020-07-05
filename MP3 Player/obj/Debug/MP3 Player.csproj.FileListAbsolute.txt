@@ -26,7 +26,6 @@ D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Pla
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\AxInterop.WMPLib.dll
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3 Player.csproj.ResolveComReference.cache
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3_Player.Forms.Radio.resources
-D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3_Player.Forms.LogIn.resources
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\bin\Debug\Log_In.mdf
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\bin\Debug\Log_In_log.ldf
 D:\Bojan\Faks\Treca Godina\Softversko inženjerstsvo\Projekat\MP3 Player\MP3 Player\obj\Debug\MP3_Player.Forms.Register.resources
